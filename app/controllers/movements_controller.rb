@@ -1,4 +1,10 @@
 class MovementsController < ApplicationController
+  before_filer :check_project
+
+  def check_project
+    @project = Project.find(params[:id])
+  end
+
   # GET /movements
   # GET /movements.json
   def index
@@ -13,7 +19,7 @@ class MovementsController < ApplicationController
   # GET /movements/1
   # GET /movements/1.json
   def show
-    @movement = Movement.find(params[:id])
+    @movement = @project.movements.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +30,7 @@ class MovementsController < ApplicationController
   # GET /movements/new
   # GET /movements/new.json
   def new
-    @movement = Movement.new
+    @movement = @project.movements.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +40,13 @@ class MovementsController < ApplicationController
 
   # GET /movements/1/edit
   def edit
-    @movement = Movement.find(params[:id])
+    @movement = @project.movements.find(params[:id])
   end
 
   # POST /movements
   # POST /movements.json
   def create
-    @movement = Movement.new(params[:movement])
+    @movement = @project.movements.new(params[:movement])
 
     respond_to do |format|
       if @movement.save
@@ -56,7 +62,7 @@ class MovementsController < ApplicationController
   # PUT /movements/1
   # PUT /movements/1.json
   def update
-    @movement = Movement.find(params[:id])
+    @movement = @project.movements.find(params[:id])
 
     respond_to do |format|
       if @movement.update_attributes(params[:movement])
@@ -72,7 +78,7 @@ class MovementsController < ApplicationController
   # DELETE /movements/1
   # DELETE /movements/1.json
   def destroy
-    @movement = Movement.find(params[:id])
+    @movement = @project.movements.find(params[:id])
     @movement.destroy
 
     respond_to do |format|
