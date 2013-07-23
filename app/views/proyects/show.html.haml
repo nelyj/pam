@@ -1,12 +1,14 @@
-%p#notice= notice
+=render('layouts/header')
+.container
+  %p#notice= notice
 
-%p
-  %b Name:
-  = @proyect.name
-%p
-  %b Country:
-  = @proyect.country
+  %p
+    %b Name:
+    = @proyect.name
+  %p
+    %b Country:
+    = @proyect.country
 
-= link_to 'Edit', edit_proyect_path(@proyect)
-\|
-= link_to 'Back', proyects_path
+  = link_to 'Edit', edit_proyect_path(@proyect)
+  \|
+  = link_to 'Back', proyects_path

@@ -1,7 +1,5 @@
-%h1 Editing proyect
+=render('layouts/header')
+.container
+  %h3 Editing proyect
 
-= render 'form'
-
-= link_to 'Show', @proyect
-\|
-= link_to 'Back', proyects_path
+  = render 'form'
