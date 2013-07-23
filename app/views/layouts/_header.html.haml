@@ -1,0 +1,15 @@
+.container
+  .masthead
+    .btn-toolbar.pull-right
+      .btn-group
+        %a.btn{:href => "#{proyects_path}"} 
+          Proyects 
+          %span.badge-inverse.badge #{Proyect.all.count}
+        %a.btn{:href => "#"} 
+          Activities 
+          %span.badge-inverse.badge #{Activity.all.count}
+        %a.btn{:href => "#"} 
+          Movements 
+          %span.badge-inverse.badge #{Movement.all.count}
+    %h3.muted PAM
+  %hr/

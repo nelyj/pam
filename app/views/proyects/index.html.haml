@@ -1,26 +1,23 @@
+=render('layouts/header')
 .container
-  .masthead
-    %h3.muted PAM
-  %hr/
-  .content
-    %h1 Listing proyects
+  %h3 Listing proyects
 
-    %table.table-bordered
+  %table.table.table-bordered
+    %tr
+      %th Name
+      %th Country
+      %th
+      %th
+      %th
+
+    - @proyects.each do |proyect|
       %tr
-        %th Name
-        %th Country
-        %th
-        %th
-        %th
+        %td= proyect.name
+        %td= proyect.country
+        %td= link_to 'Show', proyect
+        %td= link_to 'Edit', edit_proyect_path(proyect)
+        %td= link_to 'Destroy', proyect, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-      - @proyects.each do |proyect|
-        %tr
-          %td= proyect.name
-          %td= proyect.country
-          %td= link_to 'Show', proyect
-          %td= link_to 'Edit', edit_proyect_path(proyect)
-          %td= link_to 'Destroy', proyect, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %br
 
-    %br
-
-    = link_to 'New Proyect', new_proyect_path
+  = link_to 'New Proyect', new_proyect_path
