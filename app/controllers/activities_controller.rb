@@ -50,7 +50,7 @@ class ActivitiesController < ApplicationController
 
     respond_to do |format|
       if @activity.save
-        format.html { redirect_to @activity, notice: 'Activity was successfully created.' }
+        format.html { redirect_to proyect_activities_path(@project), notice: 'Activity was successfully created.' }
         format.json { render json: proyect_activities_url, status: :created, location: @activity }
       else
         format.html { render action: "new" }

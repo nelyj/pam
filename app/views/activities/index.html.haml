@@ -4,7 +4,6 @@
 
   %table.table.table-bordered
     %tr
-      %th Proyect
       %th Title
       %th Description
       %th
@@ -13,7 +12,6 @@
 
     - @activities.each do |activity|
       %tr
-        %td= activity.proyect_id.name
         %td= activity.title
         %td= activity.description
         %td= link_to 'Show', activity

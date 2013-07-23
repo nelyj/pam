@@ -26,7 +26,7 @@ class MovementsController < ApplicationController
   # GET /movements/new
   # GET /movements/new.json
   def new
-    @project = Project.find(params[:proyect_id])
+    @project = Proyect.find(params[:proyect_id])
     @movement = @project.movements.new
 
     respond_to do |format|
