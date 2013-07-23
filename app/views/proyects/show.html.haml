@@ -6,7 +6,7 @@
   %h3 
     #{@proyect.name}
     .muted= @proyect.country
-  .row
+  .row{ :style => "margin: auto;"}
     .hero-unit.span4
       %h2{ :style => "text-align: center;"} Activities: #{@proyect.activities.count}
       %hr
