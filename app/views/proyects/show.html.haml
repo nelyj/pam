@@ -2,13 +2,19 @@
 .container
   %p#notice= notice
 
-  %p
-    %b Name:
-    = @proyect.name
-  %p
-    %b Country:
-    = @proyect.country
 
+  %h3 
+    #{@proyect.name}
+    .muted= @proyect.country
+  .row
+    .hero-unit.span4
+      %h2{ :style => "text-align: center;"} Activities: #{@proyect.activities.count}
+      %hr
+      =link_to "GO", proyect_activities_path(@proyect), :class => "btn btn-success btn-block"
+    .hero-unit.span4
+      %h2{ :style => "text-align: center;"} Movements: #{@proyect.movements.count}
+      %hr      
+      =link_to "GO", proyect_movements_path(@proyect), :class => "btn btn-success btn-block"
   = link_to 'Edit', edit_proyect_path(@proyect)
   \|
   = link_to 'Back', proyects_path
