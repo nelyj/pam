@@ -6,6 +6,8 @@
     %tr
       %th Name
       %th Country
+      %th Activities
+      %th Total ($)
       %th
       %th
       %th
@@ -14,6 +16,8 @@
       %tr
         %td= proyect.name
         %td= proyect.country
+        %td= proyect.activities.count
+        %td= proyect.movements.sum("ammount")
         %td= link_to 'Show', proyect
         %td= link_to 'Edit', edit_proyect_path(proyect)
         %td= link_to 'Destroy', proyect, :method => :delete, :data => { :confirm => 'Are you sure?' }
