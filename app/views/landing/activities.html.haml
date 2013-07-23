@@ -1,0 +1,15 @@
+=render('layouts/header')
+.container
+  %h3 Listing activities
+
+  %table.table.table-bordered
+    %tr
+      %th Proyect
+      %th Title
+      %th Description
+
+    - @activities.each do |activity|
+      %tr
+        %td= activity.proyect_id.name
+        %td= activity.title
+        %td= activity.description

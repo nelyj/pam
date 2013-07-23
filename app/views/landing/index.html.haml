@@ -3,18 +3,6 @@
   %p.lead Proyect Activities Main Dashboard
   %hr
   
-  %h4{ :style => "text-align: center;"} Proyects List
-  
-  %table.table.table-bordered
-    %tr
-      %th Name
-      %th Country
-
-    - Proyect.all.each do |proyect|
-      %tr
-        %td= proyect.name
-        %td= proyect.country
-
   %h4{ :style => "text-align: center;"} Activities List
 
   %table.table.table-bordered
@@ -23,7 +11,7 @@
       %th Title
       %th Description
 
-    - Activity.all.each do |a|
+    - Activity.all[0..9].each do |a|
       %tr
         %td= Proyect.find(a.proyect_id).name
         %td= a.title
@@ -36,7 +24,7 @@
       %th Proyect
       %th Ammount
 
-    - Movement.all.each do |m|
+    - Movement.all[0..9].each do |m|
       %tr
         %td= Proyect.find(m.proyect_id).name      
         %td= m.amount

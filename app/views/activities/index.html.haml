@@ -4,18 +4,18 @@
 
   %table.table.table-bordered
     %tr
+      %th Proyect
       %th Title
       %th Description
-      %th Proyect
       %th
       %th
       %th
 
     - @activities.each do |activity|
       %tr
+        %td= activity.proyect_id.name
         %td= activity.title
         %td= activity.description
-        %td= activity.proyect_id
         %td= link_to 'Show', activity
         %td= link_to 'Edit', edit_activity_path(activity)
         %td= link_to 'Destroy', activity, :method => :delete, :data => { :confirm => 'Are you sure?' }

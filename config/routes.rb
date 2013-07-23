@@ -6,5 +6,7 @@ Pam::Application.routes.draw do
   end
   
   root :to => "landing#index"
-  
+  match '/global_activities' => "landing#activities"
+  match '/global_movements' => "landing#movements"
+    
 end
