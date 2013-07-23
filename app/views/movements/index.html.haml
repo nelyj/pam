@@ -1,21 +1,23 @@
-%h1 Listing movements
+=render('layouts/header')
+.container
+  %h3 Listing Movements
 
-%table
-  %tr
-    %th Ammount
-    %th Proyect
-    %th
-    %th
-    %th
-
-  - @movements.each do |movement|
+  %table.table.table-bordered
     %tr
-      %td= movement.ammount
-      %td= movement.proyect_id
-      %td= link_to 'Show', movement
-      %td= link_to 'Edit', edit_movement_path(movement)
-      %td= link_to 'Destroy', movement, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th Ammount
+      %th Proyect
+      %th
+      %th
+      %th
 
-%br
+    - @movements.each do |movement|
+      %tr
+        %td= movement.ammount
+        %td= movement.proyect_id
+        %td= link_to 'Show', movement
+        %td= link_to 'Edit', edit_movement_path(movement)
+        %td= link_to 'Destroy', movement, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Movement', new_movement_path
+  %br
+
+  = link_to 'New Movement', new_proyect_movement_path
