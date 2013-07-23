@@ -1,10 +1,9 @@
-= simple_form_for @activity, :url => proyect_activities_path do |f|
+= simple_form_for ([@project, @activity]) do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :title
     = f.input :description
-    = f.input :proyect_id
 
   .form-actions
     = f.button :submit
