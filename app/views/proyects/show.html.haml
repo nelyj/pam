@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @proyect.name
+%p
+  %b Country:
+  = @proyect.country
+
+= link_to 'Edit', edit_proyect_path(@proyect)
+\|
+= link_to 'Back', proyects_path

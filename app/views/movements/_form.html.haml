@@ -1,0 +1,9 @@
+= simple_form_for(@movement) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :ammount
+    = f.input :proyect_id
+
+  .form-actions
+    = f.button :submit

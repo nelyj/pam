@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Ammount:
+  = @movement.ammount
+%p
+  %b Proyect:
+  = @movement.proyect_id
+
+= link_to 'Edit', edit_movement_path(@movement)
+\|
+= link_to 'Back', movements_path
