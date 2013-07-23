@@ -5,4 +5,6 @@ Pam::Application.routes.draw do
     resources :activities
   end
   
+  root :to => "landing#index"
+  
 end
