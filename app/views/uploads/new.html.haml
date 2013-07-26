@@ -1,2 +1,9 @@
-%h1 Uploads#new
-%p Find me in app/views/uploads/new.html.haml
+=render('layouts/header')
+.container
+	.page-header
+		%h2 Nueva Carga
+.row
+	.span3
+	.span3.hero-unit
+		=render 'form'
+	.span3

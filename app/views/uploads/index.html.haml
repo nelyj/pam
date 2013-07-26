@@ -1,2 +1,11 @@
-%h1 Uploads#index
-%p Find me in app/views/uploads/index.html.haml
+=render('layouts/header')
+.container
+	.page-header
+		%h2 Carga de archivos
+		%p
+			Recuerda que esta carga de archivo sólo la debe hacer Konrad o Nelson por ahora. Ya que hay que validar la planilla
+	.row
+		.span7.hero-unit
+			asd
+		.span2.hero-unit
+			=link_to 'Nueva Carga', new_carga_path, class: 'btn btn-primary btn-block'

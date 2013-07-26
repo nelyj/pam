@@ -6,6 +6,11 @@ class UploadsController < ApplicationController
   end
 
   def new
+    @upload = Upload.new
+    respond_to do |format|
+      format.html
+      format.json { render json: @upload }
+    end
   end
 
   def edit
