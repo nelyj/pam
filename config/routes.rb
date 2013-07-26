@@ -1,5 +1,7 @@
 Pam::Application.routes.draw do
   
+  resources :uploads
+  
   resources :proyects, :shallow => :true do
     resources :movements
     resources :activities
