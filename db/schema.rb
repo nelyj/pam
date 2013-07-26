@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130723184618) do
+ActiveRecord::Schema.define(:version => 20130726142750) do
 
   create_table "activities", :force => true do |t|
     t.string   "title"
@@ -31,8 +31,45 @@ ActiveRecord::Schema.define(:version => 20130723184618) do
   create_table "proyects", :force => true do |t|
     t.string   "name"
     t.string   "country"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.integer  "generation"
+    t.string   "ycode"
+    t.boolean  "submitted"
+    t.boolean  "readyforjudging"
+    t.string   "code"
+    t.boolean  "selected"
+    t.boolean  "formalized"
+    t.string   "et"
+    t.string   "arrivalstage"
+    t.string   "website"
+    t.string   "angellist"
+    t.text     "pitch"
+    t.boolean  "incorporated"
+    t.boolean  "demoday"
+    t.boolean  "roundtable"
+    t.integer  "fulltpeople"
+    t.string   "startupage"
+    t.integer  "capitalraisedbefore"
+    t.string   "mentorab"
+    t.integer  "reapplaying"
+    t.string   "hearaboutsup"
+    t.datetime "startdate"
+    t.datetime "finishdate"
+    t.string   "statusnow"
+    t.integer  "capitalraisedmusta"
+    t.datetime "datemusta"
+    t.integer  "capitalraisedmustb"
+    t.datetime "datemustb"
+    t.string   "industry"
+    t.string   "exitstage"
+    t.string   "nextprogram"
+    t.boolean  "incorpchile"
+    t.datetime "dateic"
+    t.string   "incorpabroad"
+    t.datetime "dateia"
+    t.string   "pivoted"
+    t.string   "pnewname"
   end
 
 end

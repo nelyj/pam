@@ -1,0 +1,41 @@
+class AddFieldsToProyects < ActiveRecord::Migration
+  def change
+  	add_column :proyects, :generation, :integer
+  	add_column :proyects, :ycode, :string
+  	add_column :proyects, :submitted, :boolean
+  	add_column :proyects, :readyforjudging, :boolean
+  	add_column :proyects, :code, :string
+  	add_column :proyects, :selected, :boolean
+  	add_column :proyects, :formalized, :boolean
+  	add_column :proyects, :et, :string
+  	add_column :proyects, :arrivalstage, :string
+  	add_column :proyects, :website, :string
+  	add_column :proyects, :angellist, :string
+  	add_column :proyects, :pitch, :text
+  	add_column :proyects, :incorporated, :boolean
+  	add_column :proyects, :demoday, :boolean
+  	add_column :proyects, :roundtable, :boolean
+  	add_column :proyects, :fulltpeople, :integer 
+  	add_column :proyects, :startupage, :string
+  	add_column :proyects, :capitalraisedbefore, :integer 
+  	add_column :proyects, :mentorab, :string
+  	add_column :proyects, :reapplaying, :integer
+  	add_column :proyects, :hearaboutsup, :string
+  	add_column :proyects, :startdate, :datetime
+  	add_column :proyects, :finishdate, :datetime
+  	add_column :proyects, :statusnow, :string
+  	add_column :proyects, :capitalraisedmusta, :integer
+  	add_column :proyects, :datemusta, :datetime
+  	add_column :proyects, :capitalraisedmustb, :integer
+  	add_column :proyects, :datemustb, :datetime
+  	add_column :proyects, :industry, :string
+  	add_column :proyects, :exitstage, :string
+  	add_column :proyects, :nextprogram, :string
+  	add_column :proyects, :incorpchile, :boolean
+  	add_column :proyects, :dateic, :datetime
+  	add_column :proyects, :incorpabroad, :string
+  	add_column :proyects, :dateia, :datetime
+  	add_column :proyects, :pivoted, :string
+  	add_column :proyects, :pnewname, :string
+  end
+end
