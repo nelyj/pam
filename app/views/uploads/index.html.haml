@@ -6,6 +6,19 @@
 			Recuerda que esta carga de archivo sólo la debe hacer Konrad o Nelson por ahora. Ya que hay que validar la planilla
 	.row
 		.span7.hero-unit
-			asd
+			-if @uploads.count > 0
+				%table.table.table-bordered
+					%tr	
+						%th Fecha Carga
+						%th URL
+						%th Cargar
+					-@uploads.each do |upload|
+						%tr
+							%td=upload.created_at
+							%td=link_to "Descargar", upload.attached.url
+							%td=link_to 'Cargar Datos', procesar_carga_path(upload), class:'btn btn-primary btn-block'
+			-else
+				%p No hay cargas
+		
 		.span2.hero-unit
 			=link_to 'Nueva Carga', new_carga_path, class: 'btn btn-primary btn-block'

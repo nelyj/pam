@@ -1,1 +1,5 @@
+%hr
 =simple_form_for @upload, :url => cargas_path do |f|
+	=f.input :attached, label: false
+	%hr
+	=f.button :submit, 'Migrar', class: 'btn btn-primary btn-block'
