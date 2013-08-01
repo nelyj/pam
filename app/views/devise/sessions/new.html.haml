@@ -1,0 +1,12 @@
+.row
+  .span6
+  .span4
+    .page-header
+      %h2 Inicia Sesion
+    = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+  
+      = f.input :email, :required => false, :autofocus => true
+      = f.input :password, :required => false
+      %hr
+      = f.button :submit, "Iniciar", class: 'btn btn-primary pull-right'
+  .span4

@@ -11,5 +11,9 @@
         %a.btn{:href => "#{global_movements_path}"} 
           Movements 
           %span.badge-inverse.badge #{Movement.all.count}
+        =link_to 'Archivos', archivos_path, class: 'btn'
+        =link_to 'Subir Archivo', new_archivo_path, class: 'btn'
+        -if user_signed_in?
+          =link_to "Cerrar Sesion", destroy_user_session_path, :method => :delete, class: 'btn'
     %h3.muted PAM
   %hr/

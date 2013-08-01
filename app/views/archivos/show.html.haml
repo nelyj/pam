@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Titulo:
+  = @archivo.titulo
+
+= link_to 'Edit', edit_archivo_path(@archivo)
+\|
+= link_to 'Back', archivos_path

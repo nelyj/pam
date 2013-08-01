@@ -1,4 +1,6 @@
 class UploadsController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
     @uploads = Upload.all
   end
@@ -94,8 +96,7 @@ class UploadsController < ApplicationController
         #readyforjudging: readyforjudging,
         code: code,
         #selected: selected,
-        #formalized: formalized,
-        et: et,
+        #formalized: formalized, et: et,
         arrivalstage: arrivalstage,
         website: website,
         angellist: angellist,
@@ -131,3 +132,4 @@ class UploadsController < ApplicationController
     @projects = Proyect.all
   end
 end
+  

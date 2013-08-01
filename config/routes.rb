@@ -1,5 +1,10 @@
 Pam::Application.routes.draw do
 	
+  resources :archivos
+
+
+  devise_for :users
+
 	resources :cargas, controller: 'uploads' do 
 		member do 
 			get 'procesar', :as => 'procesar'
@@ -11,7 +16,7 @@ Pam::Application.routes.draw do
 	resources :activities
 	end
 	
-	root :to => "landing#index"
+	root :to => "archivos#index"
 	match '/global_activities' => "landing#activities"
 	match '/global_movements' => "landing#movements"
 	

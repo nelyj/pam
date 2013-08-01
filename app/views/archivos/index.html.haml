@@ -1,0 +1,16 @@
+%h1 Listing archivos
+
+%table
+  %tr
+    %th Titulo
+    %th
+    %th
+    %th
+
+  - @archivos.each do |archivo|
+    %tr
+      %td=link_to archivo.titulo, archivo.informe.url
+      -if user_signed_in?
+        %td= link_to 'Show', archivo
+        %td= link_to 'Edit', edit_archivo_path(archivo)
+        %td= link_to 'Destroy', archivo, :method => :delete, :data => { :confirm => 'Are you sure?' }

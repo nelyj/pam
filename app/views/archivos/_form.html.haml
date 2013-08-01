@@ -1,0 +1,7 @@
+= simple_form_for(@archivo) do |f|
+  = f.error_notification
+
+  = f.input :titulo, label: false, placeholder: 'Coloca un título con fecha'
+  = f.input :informe
+  %hr
+  = f.button :submit, 'Guardar', class: 'btn btn-primary pull-right'
