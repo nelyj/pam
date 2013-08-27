@@ -1,8 +1,6 @@
 Pam::Application.routes.draw do
-	
   resources :archivos
-
-
+  
   devise_for :users
 
 	resources :cargas, controller: 'uploads' do 

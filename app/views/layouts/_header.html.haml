@@ -1,19 +1,4 @@
-.container
-  .masthead
-    .btn-toolbar.pull-right
-      .btn-group
-        %a.btn{:href => "#{proyects_path}"} 
-          Proyects 
-          %span.badge-inverse.badge #{Proyect.all.count}
-        %a.btn{:href => "#{global_activities_path}"} 
-          Activities 
-          %span.badge-inverse.badge #{Activity.all.count}
-        %a.btn{:href => "#{global_movements_path}"} 
-          Movements 
-          %span.badge-inverse.badge #{Movement.all.count}
-        =link_to 'Archivos', archivos_path, class: 'btn'
-        =link_to 'Subir Archivo', new_archivo_path, class: 'btn'
-        -if user_signed_in?
-          =link_to "Cerrar Sesion", destroy_user_session_path, :method => :delete, class: 'btn'
-    %h3.muted PAM
-  %hr/
+%nav.top-bar
+  %ul.title-area
+    %li.name
+      =image_tag 'logo_sup.png', class: 'logo'

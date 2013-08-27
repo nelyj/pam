@@ -1,16 +1,49 @@
-%h1 Listing archivos
+=render('layouts/header')
 
-%table
-  %tr
-    %th Titulo
-    %th
-    %th
-    %th
+.container
+  .row
+    .large-12.columns
+      %h2 Start-Up Chile Database
+      %p
+        Here you will find monthly reports of statistical information, and a database containing information from all the project that have been part of the program.
+      
+      %h3 Monthly Reports
 
-  - @archivos.each do |archivo|
-    %tr
-      %td=link_to archivo.titulo, archivo.informe.url
-      -if user_signed_in?
-        %td= link_to 'Show', archivo
-        %td= link_to 'Edit', edit_archivo_path(archivo)
-        %td= link_to 'Destroy', archivo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %table#database{ :style => "width: 100%; "}
+        %tr
+          %th{ :style => "width: 25%; "}  File
+          %th{ :style => "width: 25%; "} Size
+          %th{ :style => "width: 25%; "} Date Published
+          %th{ :style => "width: 25%; "} Download
+
+        - @archivos.each do |archivo|
+          %tr
+            %td
+              =link_to archivo.titulo, archivo.informe.url
+            %td
+              =archivo.informe_file_size / 1024
+              Kb
+            %td
+              =archivo.updated_at.strftime("%Y - %m")
+            %td
+              =link_to archivo.informe.url do
+                =image_tag 'pdf.png', size: '56x56'
+                
+            -if user_signed_in?
+              %td= link_to 'Show', archivo
+              %td= link_to 'Edit', edit_archivo_path(archivo)
+              %td= link_to 'Destroy', archivo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+      %hr
+
+      %h3 Excel Database
+      
+      %table
+        %tr
+          %th Name File
+          %th Downlad
+        %tr
+          %td Current Database
+          %td=link_to 'Download', '#'
+
+      %hr

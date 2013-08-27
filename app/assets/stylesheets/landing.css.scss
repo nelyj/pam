@@ -7,6 +7,10 @@ body {
   padding-bottom: 40px;
 }
 
+table#database > tbody > tr > td{
+  text-align: center !important;
+}
+
 /* Custom container */
 .container-narrow {
   margin: 0 auto;
@@ -36,4 +40,9 @@ body {
 }
 .marketing p + h4 {
   margin-top: 28px;
+}
+
+/* Custom Site*/
+img.logo{
+  padding-top: 15px;
 }
