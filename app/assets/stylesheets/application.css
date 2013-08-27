@@ -10,9 +10,10 @@
  *
  *= require_self
  *= require_tree .
+ *= require foundation_and_overrides
  */ 
 
  @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800);
  @import url(http://fonts.googleapis.com/css?family=Lato:100,300,900);
 
- *= require foundation_and_overrides
+
