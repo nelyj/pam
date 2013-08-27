@@ -14,23 +14,6 @@
           %th{ :style => "width: 25%; "} Date Published
           %th{ :style => "width: 25%; "} Download
 
-        - @archivos.each do |archivo|
-          %tr
-            %td
-              =link_to archivo.titulo, archivo.informe.url
-            %td
-              =archivo.informe_file_size / 1024
-              Kb
-            %td
-              =archivo.updated_at.strftime("%Y - %m")
-            %td
-              =link_to archivo.informe.url do
-                =image_tag 'pdf.png', size: '56x56'
-                
-            -if user_signed_in?
-              %td= link_to 'Show', archivo
-              %td= link_to 'Edit', edit_archivo_path(archivo)
-              %td= link_to 'Destroy', archivo, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
       %hr
 
