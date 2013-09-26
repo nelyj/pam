@@ -1,34 +1,8 @@
 =render('layouts/header')
+.page-header
+  %h1 Dashboard
 .container
-  %p.lead Proyect Activities Main Dashboard
-  %hr
-  
-  %h4{ :style => "text-align: center;"} Activities List
-
-  %table.table.table-bordered
-    %tr
-      %th Proyect
-      %th Title
-      %th Description
-
-    - Activity.all[0..9].each do |a|
-      %tr
-        %td= Proyect.find(a.proyect_id).name
-        %td= a.title
-        %td= a.description    
-
-  %h4{ :style => "text-align: center;"} Movements List
-
-  %table.table.table-bordered
-    %tr
-      %th Proyect
-      %th Ammount
-
-    - Movement.all[0..9].each do |m|
-      %tr
-        %td= Proyect.find(m.proyect_id).name      
-        %td= m.amount
-  
-  %hr/
-  .footer
-    %p StartUp Chile © 2013
+  .row
+    =render('layouts/menu')
+    .col-md-8
+      =debug params[:controller]

@@ -90,4 +90,8 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def activities
+    @activities = Activity.all
+  end
+
 end

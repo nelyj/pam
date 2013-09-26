@@ -88,4 +88,8 @@ class MovementsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def movements
+    @movements = Movement.all
+  end
 end

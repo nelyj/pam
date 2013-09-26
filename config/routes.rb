@@ -15,7 +15,10 @@ Pam::Application.routes.draw do
 	end
 	
 	root :to => "archivos#index"
-	match '/dashboard' => 'landing#index'
+
+	match '/actividades' => 'activities#activities', as: 'actividades'
+	match '/movimientos' => 'movements#movements', as: 'movimientos'
+	match '/dashboard' => 'landing#index', as: 'dashboard'
 	match '/global_activities' => "landing#activities"
 	match '/global_movements' => "landing#movements"
 	

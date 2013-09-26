@@ -1,27 +1,24 @@
 =render('layouts/header')
+.page-header
+  %h1 Proyectos
 .container
-  %h3 Listing proyects
+  .row
+    =render('layouts/menu')
+    .col-md-8
+      =link_to 'Nuevo Proyecto', new_proyect_path, class: 'btn btn-primary pull-right'
 
-  %table.table.table-bordered
-    %tr
-      %th Name
-      %th Country
-      %th Activities
-      %th Total ($)
-      %th
-      %th
-      %th
-
-    - @proyects.each do |proyect|
-      %tr
-        %td= proyect.name
-        %td= proyect.country
-        %td= proyect.activities.count
-        %td= proyect.movements.sum("ammount")
-        %td= link_to 'Show', proyect
-        %td= link_to 'Edit', edit_proyect_path(proyect)
-        %td= link_to 'Destroy', proyect, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-  %br
-
-  = link_to 'New Proyect', new_proyect_path
+      
+      %table.table-condensed{'width' => '100%' }
+        %thead
+          %tr
+            %th Proyecto
+            %th Pais
+            %th Raise
+            %th Industria
+        %tbody
+          -@proyects.each do |p|
+            %tr
+              %td=p.name
+              %td=p.country
+              %td
+              %td=p.industry
