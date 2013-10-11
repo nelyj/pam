@@ -3,6 +3,15 @@ Pam::Application.routes.draw do
   
   devise_for :users
 
+    
+  devise_scope :user do
+    get 'confirmar', to: 'devise/confirmations#new', as: :confirmar
+    get 'recuperar', to: 'devise/passwords#new', as: :recuperar
+    get 'registrate', to: 'devise/registrations#new', as: :registrate
+    get 'entrar', to: 'devise/sessions#new', as: :entrar
+    get 'salir', to: 'devise/sessions#destroy', as: :salir
+  end
+
 	resources :cargas, controller: 'uploads' do 
 		member do 
 			get 'procesar', :as => 'procesar'
