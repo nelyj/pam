@@ -87,6 +87,12 @@ class UploadsController < ApplicationController
       pivoted = @datos.row(row)[headers['Country']]
       pnewname = @datos.row(row)[headers['Country']]
 
+      #campos nuevos
+      finish true-false
+      ynrank integer
+
+
+
       Proyect.create(
         name: name,
         country: country,
@@ -115,6 +121,7 @@ class UploadsController < ApplicationController
         statusnow: statusnow,
         capitalraisedmusta: capitalraisedmusta,
         datemusta: datemusta,
+        #total raise: suma de capitalraisedmusta+ capitalraisedmustb
         capitalraisedmustb: capitalraisedmustb,
         datemustb: datemustb,
         exitstage: exitstage,
@@ -125,8 +132,18 @@ class UploadsController < ApplicationController
         dateia: dateia,
         pivoted: pivoted,
         pnewname: pnewname
+        #rendido beneficiario =
+        #rendido innova = Viene de la tabla montos
 
         )
+
+        #esto es para la tabla de movimientos
+        #numero_informe: string
+        #fecha_del_informe
+        #aprobado_beneficiario
+        #aprobado_innova
+        #total = aprobado_beneficiario + aprobado_innova
+
     end
 
     @projects = Proyect.all

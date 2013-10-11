@@ -1,4 +1,6 @@
 class Proyect < ActiveRecord::Base
+  extend FriendlyId
+
   has_many :movements, :dependent => :destroy
   has_many :activities, :dependent => :destroy
   
@@ -7,4 +9,6 @@ class Proyect < ActiveRecord::Base
   					:demoday, :roundtable, :fulltpeople, :startupage, :capitalraisedbefore, :mentorab, :reapplaying,
   					:hearaboutsup, :startdate, :finishdate, :statusnow, :capitalraisedmusta, :datemusta, :capitalraisedmustb, 
   					:datemustb, :industry, :exitstage, :nextprogram, :incorpchile, :dateic, :incorpabroad, :dateia, :pivoted, :pnewname
+
+  friendly_id :name
 end

@@ -1,20 +1,51 @@
 =render('layouts/header')
+
 .container
-  %p#notice= notice
+  .row
+    =render('layouts/menu')
+
+    .col-md-9
+      .page-header
+        .row
+          .col-md-10
+            %h1=@proyect.name
+          .col-md-2
+            =link_to 'Volver Atras', proyects_path, class: 'btn pull-right boton-side'
 
 
-  %h3 
-    #{@proyect.name}
-    .muted= @proyect.country
-  .row{ :style => "margin: auto;"}
-    .hero-unit.span4
-      %h2{ :style => "text-align: center;"} Activities: #{@proyect.activities.count}
-      %hr
-      =link_to "GO", proyect_activities_path(@proyect), :class => "btn btn-success btn-block"
-    .hero-unit.span4
-      %h2{ :style => "text-align: center;"} Movements: #{@proyect.movements.count}
-      %hr      
-      =link_to "GO", proyect_movements_path(@proyect), :class => "btn btn-success btn-block"
-  = link_to 'Edit', edit_proyect_path(@proyect)
-  \|
-  = link_to 'Back', proyects_path
+      .col-md-12
+        .col-md-9
+          %h3 Movimientos
+        .col-md-3
+          =link_to 'Agregar Movimiento', new_proyect_movement_path(@proyect), class: 'btn btn-primary pull-right'
+
+        -if @proyect.movements.count > 0
+          %table.table-condensed{'width' => '100%' }
+            %thead
+              %tr
+                %th Proyecto
+                %th Pais
+                %th Raise
+                %th Industria
+                %th Monto Total        
+            %tbody
+        -else
+          =render 'vacio'
+
+      .col-md-12
+        .col-md-9
+          %h3 Actividades
+        .col-md-3
+          =link_to 'Agregar Actividad', new_proyect_activity_path(@proyect), class: 'btn btn-primary pull-right'
+        -if @proyect.activities.count > 0
+          %table.table-condensed{'width' => '100%' }
+            %thead
+              %tr
+                %th Proyecto
+                %th Pais
+                %th Raise
+                %th Industria
+                %th Monto Total        
+            %tbody
+        -else
+          =render 'vacio'
