@@ -1,4 +1,8 @@
 %nav.navbar.navbar-inverse.navbar-fixed-top
-	.container
-		.navbar-header
-			%a.navbar-brand{href: '/'}=image_tag 'logo_sup.png', class: 'logo'
+  .container
+    .navbar-header
+      %a.navbar-brand{href: '/'}=image_tag 'logo_sup.png', class: 'logo'
+
+    %ul.nav.navbar-nav.pull-right
+      %li=link_to 'Registrate', registrate_path
+      %li=link_to 'Inicia Sesion', entrar_path

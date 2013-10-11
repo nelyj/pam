@@ -7,10 +7,12 @@
     .col-md-9
       .page-header
         .row
-          .col-md-10
+          .col-md-7
             %h1 Proyectos
+          .col-md-3
+            =link_to 'Carga Masiva', new_proyect_path, class: 'btn btn-primary boton-side pull-right'
           .col-md-2
-            =link_to 'Nuevo Proyecto', new_proyect_path, class: 'btn btn-primary pull-right boton-side'
+            =link_to 'Nuevo Proyecto', new_proyect_path, class: 'btn btn-primary boton-side'
       
       %table.table-condensed{'width' => '100%' }
         %thead

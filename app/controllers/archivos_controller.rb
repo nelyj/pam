@@ -5,9 +5,13 @@ class ArchivosController < ApplicationController
   def index
     @archivos = Archivo.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @archivos }
+    if user_signed_in?
+      redirect_to dashboard_path
+    else
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @archivos }
+      end
     end
   end
 
