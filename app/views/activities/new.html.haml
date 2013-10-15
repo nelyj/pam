@@ -1,5 +1,18 @@
 =render('layouts/header')
-.container
-  %h3 New activity
 
-  = render 'form'
+.container
+  .row
+    =render('layouts/menu')
+
+    .col-md-9
+      .page-header
+        .row
+          .col-md-10
+            %h1 
+              =@project.name
+              =" : Agregar Actividad" 
+              
+              =link_to "Volver atras", '', class: 'btn pull-right'
+          .col-md-2
+
+      = render 'form'
