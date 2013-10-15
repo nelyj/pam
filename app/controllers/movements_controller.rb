@@ -50,7 +50,7 @@ class MovementsController < ApplicationController
 
     respond_to do |format|
       if @movement.save
-        format.html { redirect_to proyect_movements_url, notice: 'Movement was successfully created.' }
+        format.html { redirect_to  proyect_path(@project), notice: 'Movement was successfully created.' }
         format.json { render json: @movement, status: :created, location: @movement }
       else
         format.html { render action: "new" }
@@ -67,7 +67,7 @@ class MovementsController < ApplicationController
 
     respond_to do |format|
       if @movement.update_attributes(params[:movement])
-        format.html { redirect_to proyect_movements_url, notice: 'Movement was successfully updated.' }
+        format.html { redirect_to  proyect_path(@project), notice: 'Movement was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
