@@ -8,7 +8,8 @@ class Proyect < ActiveRecord::Base
   					:selected, :formalized, :et, :arrivalstage, :website, :angellist, :pitch, :incorporated,
   					:demoday, :roundtable, :fulltpeople, :startupage, :capitalraisedbefore, :mentorab, :reapplaying,
   					:hearaboutsup, :startdate, :finishdate, :statusnow, :capitalraisedmusta, :datemusta, :capitalraisedmustb, 
-  					:datemustb, :industry, :exitstage, :nextprogram, :incorpchile, :dateic, :incorpabroad, :dateia, :pivoted, :pnewname
+  					:datemustb, :industry, :exitstage, :nextprogram, :incorpchile, :dateic, :incorpabroad, :dateia, :pivoted, :pnewname,
+  					:finish, :ynrank
 
   friendly_id :name
 end

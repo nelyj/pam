@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131015194632) do
+ActiveRecord::Schema.define(:version => 20131015194954) do
 
   create_table "activities", :force => true do |t|
     t.string   "title"
@@ -102,6 +102,8 @@ ActiveRecord::Schema.define(:version => 20131015194632) do
     t.string   "pivoted"
     t.string   "pnewname"
     t.string   "slug"
+    t.string   "finish"
+    t.integer  "ynrank"
   end
 
   add_index "proyects", ["slug"], :name => "index_proyects_on_slug"
