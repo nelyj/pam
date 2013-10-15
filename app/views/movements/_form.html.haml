@@ -1,8 +1,6 @@
 = simple_form_for([@project,@movement]) do |f|
   = f.error_notification
 
-  .form-inputs
-    = f.input :ammount
+  = f.input :ammount
 
-  .form-actions
-    = f.button :submit
+  = f.button :submit, "Crear movimiento"

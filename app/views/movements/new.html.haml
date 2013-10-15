@@ -1,5 +1,18 @@
-%h1 New movement
+=render('layouts/header')
 
-= render 'form'
+.container
+  .row
+    =render('layouts/menu')
 
-= link_to 'Back', movements_path
+    .col-md-9
+      .page-header
+        .row
+          .col-md-10
+            %h1 
+              =@project.name
+              =" : Agregar movimiento" 
+              
+              =link_to "Volver atras", '', class: 'btn pull-right'
+          .col-md-2
+
+      = render 'form'
