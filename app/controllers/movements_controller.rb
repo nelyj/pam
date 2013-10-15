@@ -45,7 +45,7 @@ class MovementsController < ApplicationController
   # POST /movements
   # POST /movements.json
   def create
-    @project = Project.find(params[:proyect_id])
+    @project = Proyect.find(params[:proyect_id])
     @movement = @project.movements.new(params[:movement])
 
     respond_to do |format|
