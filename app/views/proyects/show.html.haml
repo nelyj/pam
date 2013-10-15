@@ -23,12 +23,21 @@
           %table.table-condensed{'width' => '100%' }
             %thead
               %tr
-                %th Proyecto
-                %th Pais
-                %th Raise
-                %th Industria
-                %th Monto Total        
+                %th N° de informe
+                %th Fecha Informe
+                %th Rendido Beneficiario
+                %th Rendido Innova
+                %th Aprobado Beneficiario
+                %th Aprobado Innova
             %tbody
+              -@proyect.movements.each do |movimiento|
+                %tr
+                  %td=movimiento.fecha_informe
+                  %td=movimiento.rendido_beneficiario
+                  %td=movimiento.rendido_innova
+                  %td=movimiento.aprobado_beneficiario
+                  %td=movimiento.aprobado_innova
+
         -else
           =render 'vacio'
 
@@ -41,11 +50,12 @@
           %table.table-condensed{'width' => '100%' }
             %thead
               %tr
-                %th Proyecto
-                %th Pais
-                %th Raise
-                %th Industria
-                %th Monto Total        
+                %th Titulo
+                %th Descripcion       
             %tbody
+              -@proyect.activities.each do |activity|
+                %tr
+                  %td=activity.title
+                  %td=activity.description
         -else
           =render 'vacio'
