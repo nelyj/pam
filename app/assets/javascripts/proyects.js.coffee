@@ -8,7 +8,7 @@ $ ->
       $(this).css "background-color", "#E4E4E4" if $(this).find("a").attr("href")
    ), \
    (-> 
-    $("tr").css "cursor", "none" 
-    $(this).css "background-color", "#fff" if $(this).find("a").attr("href")
+    $("tr").css "cursor", "pointer" 
+    $(this).css "background-color", "#E4E4E4" if $(this).find("a").attr("href")
    )
 
