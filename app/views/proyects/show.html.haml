@@ -2,60 +2,69 @@
 
 .container
   .row
-    =render('layouts/menu')
 
-    .col-md-9
-      .page-header
-        .row
-          .col-md-10
-            %h1=@proyect.name
-          .col-md-2
-            =link_to 'Volver Atras', proyects_path, class: 'btn pull-right boton-side'
 
+    .col-md-4
+      .col-md-12
+        %h4 MOVIMIENTOS
+        .panel.panel-default
+          .panel-body
+            %p
+              %h4.centrar TOTAL DE MOVIMIENTOS
+
+          %table.table
+            %tbody
+              %tr
+                %td $ RENDIDO
+                %td 
+              %tr
+                %td $ APROBADO
+                %td
+              %tr
+                %td $ APROBADO INNOVA
+                %td
+          .panel-body
+            =link_to "#", class: 'btn btn-primary btn-block' do 
+              Agregar Movimiento
+              %i.glyphicon.glyphicon-usd
 
       .col-md-12
-        .col-md-9
-          %h3 Movimientos
-        .col-md-3
-          =link_to 'Agregar Movimiento', new_proyect_movement_path(@proyect), class: 'btn btn-primary pull-right'
+        %h4 ACTIVIDADES
+        .panel.panel-default
+          .panel-body
+            %p
+              %h4.centrar PROXIMA REUNION
 
-        -if @proyect.movements.count > 0
-          %table.table-condensed{'width' => '100%' }
-            %thead
-              %tr
-                %th N° de informe
-                %th Fecha Informe
-                %th Rendido Beneficiario
-                %th Rendido Innova
-                %th Aprobado Beneficiario
-                %th Aprobado Innova
+          %table.table
             %tbody
-              -@proyect.movements.each do |movimiento|
-                %tr
-                  %td=movimiento.fecha_informe
-                  %td=movimiento.rendido_beneficiario
-                  %td=movimiento.rendido_innova
-                  %td=movimiento.aprobado_beneficiario
-                  %td=movimiento.aprobado_innova
-
-        -else
-          =render 'vacio'
-
-      .col-md-12
-        .col-md-9
-          %h3 Actividades
-        .col-md-3
-          =link_to 'Agregar Actividad', new_proyect_activity_path(@proyect), class: 'btn btn-primary pull-right'
-        -if @proyect.activities.count > 0
-          %table.table-condensed{'width' => '100%' }
-            %thead
               %tr
-                %th Titulo
-                %th Descripcion       
-            %tbody
-              -@proyect.activities.each do |activity|
-                %tr
-                  %td=activity.title
-                  %td=activity.description
-        -else
-          =render 'vacio'
+                %td $ RENDIDO
+                %td 
+              %tr
+                %td $ APROBADO
+                %td
+              %tr
+                %td $ APROBADO INNOVA
+                %td
+          .panel-body
+            =link_to "#", class: "btn btn-primary btn-block" do
+              Agregar Actividades
+              %i.glyphicon.glyphicon-calendar
+
+    .col-md-8
+      %h4 DETALLES DEL PROYECTO
+      .panel.panel-default
+        .panel-body
+          %h3=@proyect.name
+          %p
+            =@proyect.country
+            ="-"
+            -if @proyect.generation.nil?
+              ="N/A"
+            -else
+              =@proyect.generation
+            ="-"
+            -if @proyect.industry.nil?
+              ="N/A"
+            -else
+              =@proyect.industry
