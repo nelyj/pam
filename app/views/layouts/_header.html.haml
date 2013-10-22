@@ -5,11 +5,11 @@
 
     %nav.collapse.navbar-collapse{role: "navigation"}
       %ul.nav.navbar-nav
-        %li
+        %li{class: is_active?(dashboard_path)}
           =link_to dashboard_path do
             Dashboard
             %i.glyphicon.glyphicon-home 
-        %li
+        %li{class: is_active?(proyects_path)}
           =link_to proyects_path do
             Proyectos
             %i.glyphicon.glyphicon-list
