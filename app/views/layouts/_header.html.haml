@@ -3,6 +3,15 @@
     .navbar-header
       %a.navbar-brand{href: '/'}=image_tag 'logo_sup.png', class: 'logo'
 
-    %ul.nav.navbar-nav.pull-right
-      %li=link_to 'Registrate', registrate_path
-      %li=link_to 'Inicia Sesion', entrar_path
+    %nav.collapse.navbar-collapse{role: "navigation"}
+      %ul.nav.navbar-nav
+        %li
+          =link_to dashboard_path do
+            Dashboard
+            %i.glyphicon.glyphicon-home 
+        %li
+          =link_to proyects_path do
+            Proyectos
+            %i.glyphicon.glyphicon-list
+      %ul.nav.navbar-nav.pull-right
+        %li=link_to 'Inicia Sesion', entrar_path
