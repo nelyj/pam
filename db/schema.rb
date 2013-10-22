@@ -11,14 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131015194954) do
+ActiveRecord::Schema.define(:version => 20131022140317) do
 
   create_table "activities", :force => true do |t|
     t.string   "title"
     t.string   "description"
     t.integer  "proyect_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.string   "date_activity"
+    t.string   "etapa_actual"
+    t.text     "need_comunications"
+    t.text     "experience"
+    t.text     "notes"
+    t.integer  "nuevos_usuarios"
+    t.integer  "nuevos_clientes"
+    t.integer  "ventas_mensuales_actuales"
+    t.string   "venden_en_mas_paises"
+    t.integer  "nuevos_empleados_chilenos"
+    t.integer  "nuevos_empleados_extranjeros"
+    t.integer  "nuevos_outsourcing_chilenos"
+    t.integer  "nuevos_outsourcing_extranjeros"
+    t.string   "fecha_proxima_reunion"
   end
 
   create_table "archivos", :force => true do |t|
