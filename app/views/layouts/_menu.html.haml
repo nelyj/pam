@@ -1,5 +1,8 @@
 .col-md-2.pull-left
   %h3 MENU
   %ul.nav.nav.pills.nav.stacked
-    %li=link_to 'Inicio', dashboard_path
+    %li
+      %span.glyphicon.glyphicon-user
+      =link_to 'Inicio', dashboard_path
+
     %li=link_to 'Proyectos', proyects_path 
