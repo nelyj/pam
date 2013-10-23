@@ -47,7 +47,7 @@
                 %td $ APROBADO INNOVA
                 %td
           .panel-body
-            =link_to "#", class: "btn btn-primary btn-block" do
+            =link_to new_proyect_activity_path(@proyect), remote: true, class: "btn btn-primary btn-block" do
               Agregar Actividades
               %i.glyphicon.glyphicon-calendar
 
@@ -68,5 +68,11 @@
               ="N/A"
             -else
               =@proyect.industry
+
+    .col-md-8
+      %h4 CAPITAL LEVANTADO
+      .panel.panel-default
+        .panel-body
+        
 
 =render 'layouts/modal'

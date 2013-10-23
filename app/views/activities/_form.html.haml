@@ -1,9 +1,10 @@
 = simple_form_for ([@project, @activity]) do |f|
-  = f.error_notification
+  .modal-body
+    = f.error_notification
 
-  .form-inputs
     = f.input :title
     = f.input :description
 
-  .form-actions
-    = f.button :submit
+  .modal-footer
+    %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cerrar
+    = f.button :submit, "Guardar Actividad", class: 'btn btn-primary'
