@@ -24,7 +24,7 @@
                 %td $ APROBADO INNOVA
                 %td
           .panel-body
-            =link_to "#", class: 'btn btn-primary btn-block' do 
+            =link_to new_proyect_movement_path(@proyect), remote: true, class: 'btn btn-primary btn-block' do 
               Agregar Movimiento
               %i.glyphicon.glyphicon-usd
 
@@ -68,3 +68,5 @@
               ="N/A"
             -else
               =@proyect.industry
+
+=render 'layouts/modal'
