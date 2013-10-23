@@ -1,13 +1,15 @@
 = simple_form_for([@project,@movement]) do |f|
   .modal-body
     = f.error_notification
-
-    =f.input :numero_informe
-    =f.input :fecha_informe
-    =f.input :rendido_beneficiario
-    =f.input :rendido_innova
-    =f.input :aprobado_beneficiario
-    =f.input :aprobado_innova
+    .row
+      .col-md-6
+        =f.input :numero_informe, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'Ingresa el número de informe'
+        =f.input :rendido_beneficiario, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: '$ Rendido por beneficiario'
+        =f.input :aprobado_beneficiario, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: '$ Aprobado beneficiario'
+      .col-md-6
+        =f.input :fecha_informe, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'Fecha del informe'
+        =f.input :rendido_innova, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: '$ Rendido por innova'
+        =f.input :aprobado_innova, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: '$ Aprobado innova'
   .modal-footer
     %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cerrar
     = f.button :submit, "Guardar movimiento", class: 'btn btn-primary'
