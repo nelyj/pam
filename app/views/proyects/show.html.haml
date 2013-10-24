@@ -51,28 +51,16 @@
               Agregar Actividades
               %i.glyphicon.glyphicon-calendar
 
+      .col-md-12
+        %h4 CAPITAL LEVANTADO
+        .panel.panel-default
+          .panel-body
+
     .col-md-8
       %h4 DETALLES DEL PROYECTO
       .panel.panel-default
         .panel-body
-          %h3=@proyect.name
-          %p
-            =@proyect.country
-            ="-"
-            -if @proyect.generation.nil?
-              ="N/A"
-            -else
-              =@proyect.generation
-            ="-"
-            -if @proyect.industry.nil?
-              ="N/A"
-            -else
-              =@proyect.industry
-
-    .col-md-8
-      %h4 CAPITAL LEVANTADO
-      .panel.panel-default
-        .panel-body
-        
+          =render 'information'
+ 
 
 =render 'layouts/modal'

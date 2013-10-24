@@ -1,0 +1,221 @@
+.row
+	.col-md-12
+		%h2=@proyect.name
+		%p
+			.row
+				.col-md-3
+					%b Pais proyecto: 
+					-if @proyect.country.nil?
+						="Pais"
+					-else
+						=@proyect.country
+				.col-md-3
+					%b Generacion: 
+					-if @proyect.generation.nil?
+						="Generation"
+					-else
+						=@proyect.generation
+				
+				.col-md-3
+					%b Industria proyecto:
+					-if @proyect.industry.nil?
+						="Industry"
+					-else
+						=@proyect.industry
+				.col-md-3
+					%b Ejecutivo técnico
+					-if @proyect.et.nil?
+						="Ejecutivo"
+					-else
+						=@proyect.et
+			%hr
+			.row
+				.col-md-6
+					%b Codigo Younoodle:
+
+					-if @proyect.ycode.nil?
+						="YCODE"
+					-else
+						=@proyect.ycode
+					
+				.col-md-6
+					%b Codigo SGP
+					-if @proyect.code.nil?
+						=" CODE "
+					-else
+						=@proyect.code
+
+		%hr
+		%h4 PITCH
+		%p
+			-if @proyect.pitch.nil?
+				=" Pitch no disponible"
+			-else 
+				=@proyect.pitch
+		%hr
+		%p
+			%h4 DETALLES
+			.row
+				.col-md-4
+					%b Status: 
+					-if @proyect.statusnow.nil?
+						=" Sin status"
+					-else
+						=@proyect.statusnow
+				
+				.col-md-4
+					%b Fecha inicio: 
+					-if @proyect.finishdate.nil?
+						="Desconocido"
+					-else
+						=@proyect.finishdate
+
+				.col-md-4
+					%b Fecha termino: 
+					-if @proyect.startdate.nil?
+						="Desconocido"
+					-else
+						=@proyect.startdate
+			%hr
+			.row	
+				.col-md-4
+					%b Website:
+					-if @proyect.website.nil?
+						=" Website"
+					-else
+						=@proyect.website
+				
+				.col-md-4
+					%b Angellist URL:
+					-if @proyect.website.nil?
+						=" Angellist url"
+					-else
+						=@proyect.angellist
+		
+				.col-md-4
+					%b Younoodle Rank:
+					-if @proyect.ynrank.nil?
+						=" Rank"
+					-else
+						=@proyect.ynrank
+			%hr
+			.row
+				.col-md-4
+					%b Submitted:
+					-if @proyect.submitted?
+						=" Si"
+					-else
+						=" No"
+				.col-md-4
+					%b Ready for judging
+					-if @proyect.readyforjudging?
+						=" Si"
+					-else
+						=" No"
+				.col-md-4
+					%b Selected
+					-if @proyect.selected?
+						=" Si"
+					-else
+						=" No"
+			%hr
+			.row
+				.col-md-4
+					%b Formalized
+					-if @proyect.formalized?
+						=" Si"
+					-else
+						=" No"
+
+				.col-md-4
+					%b Arrival Stage
+					-if @proyect.arrivalstage.nil?
+						=" ArrivalStage"
+					-else
+						=@proyect.arrivalstage
+
+				.col-md-4
+					%b Re-applaying
+					=@proyect.reapplaying
+			%hr
+			.row
+				.col-md-4
+					%b Demoday
+					-if @proyect.demoday?
+						=" Si Participo"
+					-else
+						=" No Participo"	
+				.col-md-4
+					%b Roundtable
+					-if @proyect.roundtable?
+						=" Si Participo"
+					-else
+						=" No Participo"
+				.col-md-4
+					%b Mentor
+					-if @proyect.mentorab.nil?
+						=" Mentor"
+					-else
+						=@proyect.mentorab
+			%hr
+			.row
+				.col-md-6
+					%b Startup Age
+					-if @proyect.startupage.nil?
+						="startupage"
+					-else
+						=@proyect.startupage
+				.col-md-6
+					%b Incorporated
+					-if @proyect.incorporated?
+						=" Si"
+					-else
+						=" No"
+			%hr
+			.row
+				.col-md-6
+					%b Incorporated in Chile
+					-if @proyect.incorpchile?
+						="Si"
+					-else
+						="No"
+				.col-md-6
+					%b Date incorporated
+					=@proyect.dateic
+			%hr
+			.row
+				.col-md-6
+					%b Incorporated abroad
+					=@proyect.incorpabroad
+				.col-md-6
+					%b Date incorporated abroad
+					=@proyect.dateia
+			%hr
+			.row
+				.col-md-4
+					%b Full t people
+					=@proyect.fulltpeople
+				.col-md-4
+					%b Exit stage
+					=@proyect.exitstage
+				.col-md-4
+					%b Next Program
+					=@proyect.nextprogram
+			%hr
+			.row
+				.col-md-4
+					%b Pivot
+					=@proyect.pivoted
+				.col-md-4
+					%b Pivot name
+					=@proyect.pnewname
+
+				.col-md-4
+					%b Finish
+					=@proyect.finish
+
+			%hr
+			.row
+				.col-md-12
+					%b Hear about SUP
+					=@proyect.hearaboutsup
