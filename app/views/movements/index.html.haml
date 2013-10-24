@@ -1,14 +1,13 @@
 =render('layouts/header')
 .container
   .row
-    =render('layouts/menu')
-    .col-md-9
+    .col-md-12
       .page-header
         .row
           .col-md-10
             %h1 Movimientos
           .col-md-2
-            =link_to 'Nuevo Movimento', new_movement_path, class: 'btn btn-primary boton-side pull-irght'
+            =link_to 'Nuevo Movimento', new_proyect_movement_path, class: 'btn btn-primary boton-side pull-irght'
 
       %table.table-condensed{'width' => '100%' }
         %tr
@@ -20,7 +19,7 @@
         - @movements.each do |movement|
           %tr
             %td= movement.ammount
-            %td= movement.proyect_id.name
+            %td
             %td= link_to 'Show', movement
             %td= link_to 'Edit', edit_movement_path(movement)
             %td= link_to 'Destroy', movement, :method => :delete, :data => { :confirm => 'Are you sure?' }

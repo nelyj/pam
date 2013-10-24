@@ -11,6 +11,9 @@
           .panel-body
             %p
               %h4.centrar TOTAL DE MOVIMIENTOS
+              %p
+                %b
+                  %h2.centrar=link_to @proyect.movements.count, proyect_movements_path(@proyect)
 
           %table.table
             %tbody
