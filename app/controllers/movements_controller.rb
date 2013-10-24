@@ -5,7 +5,8 @@ class MovementsController < ApplicationController
   # GET /movements.json
   def index
     @movements = Movement.all
-
+    @project = Proyect.find(params[:proyect_id])
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @movements }

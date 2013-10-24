@@ -7,19 +7,29 @@
           .col-md-10
             %h1 Movimientos
           .col-md-2
-            =link_to 'Nuevo Movimento', new_proyect_movement_path, class: 'btn btn-primary boton-side pull-irght'
+            =link_to 'Agregar Movimento', new_proyect_movement_path, remote: true, class: 'btn btn-primary boton-side pull-irght'
 
       %table.table-condensed{'width' => '100%' }
         %tr
-          %th Proyecto
-          %th Monto Total
+          %th Número de informe
+          %th Fecha de informe
+          %th Rendido por beneficiario
+          %th Rendido por innova
+          %th Aprobado beneficiario
+          %th Aprobado innova
           
 
 
         - @movements.each do |movement|
           %tr
-            %td= movement.ammount
-            %td
-            %td= link_to 'Show', movement
-            %td= link_to 'Edit', edit_movement_path(movement)
-            %td= link_to 'Destroy', movement, :method => :delete, :data => { :confirm => 'Are you sure?' }
+            %td= movement.numero_informe
+            %td= movement.fecha_informe
+            %td= movement.rendido_beneficiario
+            %td= movement.rendido_innova
+            %td= movement.aprobado_beneficiario
+            %td= movement.aprobado_innova
+            / %td= link_to 'Show', movement
+            / %td= link_to 'Edit', edit_movement_path(movement)
+            / %td= link_to 'Destroy', movement, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+=render 'layouts/modal'
