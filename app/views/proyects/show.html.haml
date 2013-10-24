@@ -17,15 +17,19 @@
 
           %table.table
             %tbody
+              -@datos = movimientos(@proyect)
               %tr
-                %td $ RENDIDO
-                %td 
+                %td $ RENDIDO BENEFICIARIO
+                %td=link_to @datos[:rendido_beneficiario], proyect_movements_path(@proyect)
+              %tr
+                %td $ RENDIDO INNOVA
+                %td=link_to @datos[:rendido_innova], proyect_movements_path(@proyect)
               %tr
                 %td $ APROBADO
-                %td
+                %td=link_to @datos[:aprobado_beneficiario], proyect_movements_path(@proyect)
               %tr
                 %td $ APROBADO INNOVA
-                %td
+                %td=link_to @datos[:aprobado_innova], proyect_movements_path(@proyect)
           .panel-body
             =link_to new_proyect_movement_path(@proyect), remote: true, class: 'btn btn-primary btn-block' do 
               Agregar Movimiento
