@@ -1,11 +1,46 @@
 = simple_form_for ([@project, @activity]) do |f|
   .modal-body
     = f.error_notification
+    .row
+      .col-md-12
+        =f.input :title, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'Titulo para la actividad'
+      
+      .col-md-4
+        =f.input :nuevos_usuarios, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'Nuevos Usuarios'
+      .col-md-4
+        =f.input :date_activity, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'Fecha reunión'
+      .col-md-4
+        =f.input :fecha_proxima_reunion, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'Próxima reunión'
 
-    = f.input :title
-    = f.input :description
-    = f.input :date_activity
-    = f.input :etapa_actual
+
+      .col-md-4
+        =f.input :nuevos_clientes, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'N° nuevos clientes'
+      .col-md-4
+        =f.input :ventas_mensuales_actuales, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'Venta mensual actual'
+      .col-md-4
+        =f.input :venden_en_mas_paises, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'N° paises venden'
+      .col-md-4
+        =f.input :etapa_actual, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'Etapa actual'
+
+
+      .col-md-4
+        =f.input :nuevos_empleados_chilenos, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'N° emp. chilenos'
+      .col-md-4
+        =f.input :nuevos_empleados_extranjeros, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'N° emp. extranjeros'
+      .col-md-6
+        =f.input :nuevos_outsourcing_chilenos, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'N° new outsourcing CL'
+      .col-md-6
+        =f.input :etapa_actual, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'N° new outsourcing extranjero'
+
+      .col-md-4
+        =f.input :need_comunications, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'Necesita comunicación'
+      .col-md-4
+        =f.input :experience, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'Experiencia'
+      .col-md-4
+        =f.input :notes, input_html: {class: 'form-control'},wrapper_html: {class: 'form-group'}, label: false, placeholder: 'Notas'
+
+
+
 
   .modal-footer
     %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cerrar
